@@ -1,0 +1,15 @@
+.error-indicator {
+    margin: 10px auto;
+    text-align: center;
+    color: #4B0082;
+}
+
+.error-indicator span {
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: "Book Antiqua";
+}
+
+.error-indicator img {
+    width: 80px;
+}
