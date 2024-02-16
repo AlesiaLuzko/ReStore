@@ -1,6 +1,17 @@
 
 const initialState = {
-  books: []
+  books: [
+    {
+      id: 1,
+      title: 'Jane Eyre',
+      author: 'Charlotte Brontë'
+    },
+    {
+      id: 2,
+      title: 'Hatter\'s Castle',
+      author: 'Archibald Cronin'
+    }
+  ]
 };
 
 const reducer = (state = initialState, action) => {
