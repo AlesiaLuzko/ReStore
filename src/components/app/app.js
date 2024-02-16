@@ -1,14 +1,29 @@
-import Spinner from '../spiner';
-import withBookstoreService from '../hoc';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider
+} from 'react-router-dom';
 
-const App = ({ bookstoreService }) => {
-  console.log(bookstoreService.getBooks());
+import {
+  HomePage,
+  CartPage
+} from '../pages';
+
+import Layout from '../layout';
+
+const App = () => {
+
+  const router = createBrowserRouter(createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route path="/" element={<HomePage />} />
+      <Route path="cart" element={<CartPage />} />
+    </Route>
+  ));
 
   return (
-    <div>
-      <Spinner />
-    </div>
+    <RouterProvider router={router}/>
   );
 };
 
-export default withBookstoreService()(App);
+export default App;
