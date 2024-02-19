@@ -11,6 +11,7 @@ import {
 } from '../pages';
 
 import Layout from '../layout';
+import './app.css';
 
 const App = () => {
 
@@ -22,7 +23,9 @@ const App = () => {
   ));
 
   return (
-    <RouterProvider router={router}/>
+    <main className="app">
+      <RouterProvider router={router}/>
+    </main>
   );
 };
 

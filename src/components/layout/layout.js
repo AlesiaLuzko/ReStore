@@ -5,7 +5,7 @@ import ShopHeader from '../shop-header';
 const Layout = () => {
   return(
     <div>
-      <ShopHeader />
+      <ShopHeader numItems={5} total={210}/>
       <Outlet />
     </div>
   );
