@@ -1,7 +1,12 @@
+import ShoppingCartTable from '../shopping-cart-table';
+
 const CartPage = () => {
 
-  return <div>Cart Page</div>
-
+  return (
+    <div>
+      <ShoppingCartTable />
+    </div>
+  );
 };
 
 export default CartPage;
