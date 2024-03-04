@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
   bookAddedToCart,
@@ -6,7 +6,14 @@ import {
   allBooksRemovedToCart } from '../../actions';
 import './shopping-cart-table.css';
 
-const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) => {
+const ShoppingCartTable = () => {
+
+  const {cartItems: items, orderTotal: total} = useSelector(state => state.shoppingCart);
+  const dispatch = useDispatch();
+
+  const onIncrease = (id) => dispatch(bookAddedToCart(id));
+  const onDecrease = (id) => dispatch(bookRemovedToCart(id));
+  const onDelete = (id) => dispatch(allBooksRemovedToCart(id));
 
   const renderRow = (item, idx) => {
     const { id, title, count, total } = item;
@@ -61,17 +68,4 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
   );
 };
 
-const mapStateToProps = ({ shoppingCart: { cartItems, orderTotal }}) => {
-  return {
-    items: cartItems,
-    total: orderTotal
-  };
-};
-
-const mapDispatchToProps = {
-  onIncrease: bookAddedToCart,
-  onDecrease: bookRemovedToCart,
-  onDelete: allBooksRemovedToCart
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCartTable);
+export default ShoppingCartTable;
