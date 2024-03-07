@@ -1,10 +1,31 @@
-import Spinner from '../spiner';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider
+} from 'react-router-dom';
+
+import {
+  HomePage,
+  CartPage
+} from '../pages';
+
+import Layout from '../layout';
+import './app.css';
 
 const App = () => {
+
+  const router = createBrowserRouter(createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route index element={<HomePage />} />
+      <Route path="cart" element={<CartPage />} />
+    </Route>
+  ));
+
   return (
-    <div>
-      <Spinner />
-    </div>
+    <main className="app">
+      <RouterProvider router={router}/>
+    </main>
   );
 };
 

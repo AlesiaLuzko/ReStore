@@ -1,0 +1,28 @@
+.shopping-cart-table h2 {
+    margin: 30px;
+}
+
+.shopping-cart-table button {
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.shopping-cart-table .total {
+    text-align: right;
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+
+.shopping-cart-table .name-item {
+    text-align: start;
+    width: 250px;
+}
+
+.shopping-cart-table {
+    text-align: center;
+}
+
+.shopping-cart-table .action {
+    width: 200px;
+}
