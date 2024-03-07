@@ -20,10 +20,10 @@ const ShoppingCartTable = () => {
     return (
       <tr key={id}>
         <td>{idx + 1}</td>
-        <td>{title}</td>
+        <td className="name-item">{title}</td>
         <td>{count}</td>
         <td>${total}</td>
-        <td>
+        <td className="action">
           <button
             onClick={() => onDecrease(id)}
             className="btn btn-outline-warning btn-sm">
@@ -50,11 +50,11 @@ const ShoppingCartTable = () => {
       <table className="table">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Item</th>
-            <th>Count</th>
-            <th>Total</th>
-            <th>Action</th>
+            <th scope="col">#</th>
+            <th scope="col"  className="name-item">Item</th>
+            <th scope="col">Count</th>
+            <th scope="col">Total</th>
+            <th scope="col" className="action">Action</th>
           </tr>
         </thead>
         <tbody>

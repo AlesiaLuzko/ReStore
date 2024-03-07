@@ -1,4 +1,15 @@
 .book-list {
     list-style: none;
     margin-bottom: 40px;
+    column-count: 2;
+}
+
+.book-list li {
+    margin-bottom: 20px;
+}
+
+@media(max-width: 1024px) {
+    .book-list {
+        column-count: 1;
+    }
 }
